@@ -42,7 +42,6 @@ function evenNumbers(arr)
 					}
 				}
 			resolve(evenNumbers);
-			return evenNumbers;
 		},2000)
 	})
 }
