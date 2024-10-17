@@ -16,7 +16,7 @@ function printOddNumbers(arr)
 {
 	return new Promise((resolve,reject)=>{
 		setTimeout((arr)=>{
-			const oddArray = [];
+			var oddArray = [];
 			for(let i=0;i<arr.length;i++)
 				{
 					if(arr[i]%2!==0)
@@ -29,15 +29,37 @@ function printOddNumbers(arr)
 	})
 }
 
+function evenNumbers(arr)
+{
+	return new Promise((resolve,result)=>{
+		setTimeout((arr)=>{
+			var evenNumbers = [];
+			for(let i=0;i<arr.length;i++)
+				{
+					if(arr[i]%2==0)
+					{
+						evenNumbers.push((arr[i]*2));
+					}
+				}
+			resolve(evenNumbers);
+			return evenNumbers;
+		},2000)
+	})
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
 	firstPromise(arr)
 	.then((firstPromiseArr)=>{
-		printOddNumbers(firstPromiseArr);
+		return printOddNumbers(firstPromiseArr);
 	})
-	.then((printOddNumbersArr)={
+	.then((printOddNumbersArr)=>{
 		document.getElementById('output').textContent = printOddNumbers;
+		return evenNumbers(arr);
+	})
+	.then((printEvenNumbers)=>{
+		document.getElementById('output').textContent = printEvenNumbers;
 	})
 	.catch((error)=>{
 		console.log(error);
