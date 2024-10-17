@@ -24,7 +24,7 @@ function printOddNumbers(arr)
 						oddArray.push(arr[i]);
 					}
 				}
-                document.getElementById('output').textContent = oddArray;
+                document.getElementById('output').textContent = oddArray.join(",");
 			resolve(arr);
 		},1000)
 	})
@@ -42,7 +42,7 @@ function evenNumbers(arr)
 						evenNumbers.push((arr[i]*2));
 					}
 				}
-                document.getElementById('output').textContent = evenNumbers;
+                document.getElementById('output').textContent = evenNumbers.join(",");
 			resolve(arr);
 		},2000)
 	})
