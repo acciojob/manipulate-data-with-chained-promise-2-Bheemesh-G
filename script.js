@@ -48,7 +48,7 @@ function evenNumbers(arr)
 	})
 }
 
-document.getElementById('but').addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
 	firstPromise(arr)
 	.then((firstPromiseArr)=>{
